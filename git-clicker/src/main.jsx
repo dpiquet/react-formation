@@ -6,6 +6,7 @@ import items from "./items.json";
 const root = createRoot(document.getElementById("root"))
 
 function Game() {
+    // FIXME: Question: 1 game state with everything in it ? or 2 states (score and ownedItems )?
     const [gameState, setGameState] = useState({
         ownedItems: [],
         currentScore: 20,
@@ -35,7 +36,7 @@ function Game() {
                 ownedItems: [
                     ...gameState.ownedItems,
                     item
-                ]
+                ],
             }
         });
     }
