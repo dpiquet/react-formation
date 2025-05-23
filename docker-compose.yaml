@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  node:
+    image: node:22
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 80:80
+      - 5173:5173
+    volumes:
+      - ./:/app:rw
+    command: "tail -F /var/log/syslog"
