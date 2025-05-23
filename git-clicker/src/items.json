@@ -1,0 +1,7 @@
+[
+  {"name":  "Bash", "price":  10, "linesPerMilliseconds":  0.1},
+  {"name":  "Git", "price":  20, "linesPerMilliseconds":  1.2},
+  {"name":  "JS", "price":  50, "linesPerMilliseconds":  14.0},
+  {"name":  "React", "price":  75, "linesPerMilliseconds":  75.0},
+  {"name":  "Vim", "price":  100, "linesPerMilliseconds":  100.0}
+]
