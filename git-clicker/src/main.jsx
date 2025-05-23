@@ -12,20 +12,17 @@ function Game() {
     })
 
     useEffect(() => {
-        let intervalIds = []
+        const interval = setInterval(() => {
+            // Compute scoreupdate and update score once accordingly
+            let scoreUpdate = 0;
+            gameState.ownedItems.forEach((item) => {
+                scoreUpdate += item.linesPerMilliseconds;
+            });
 
-        gameState.ownedItems.forEach((item) => {
-            console.log('item generation rate: ', item, 1/item.linesPerMilliseconds)
+            incrementScore(scoreUpdate)
+        }, 100);
 
-            intervalIds.push(setInterval(() => {
-                incrementScore()
-            }, 1 / item.linesPerMilliseconds))
-        });
-
-        return () => {
-            intervalIds.forEach(id => clearInterval(id))
-        }
-
+        return () => clearInterval(interval);
     }, [gameState]);
 
     const buyItem = (item) => {
@@ -43,11 +40,11 @@ function Game() {
         });
     }
 
-    const incrementScore = () => {
+    const incrementScore = (incr = 1) => {
         setGameState((state) => {
             return {
                 ...state,
-                currentScore: state.currentScore+1,
+                currentScore: state.currentScore+incr,
             }
         })
     }
@@ -55,10 +52,7 @@ function Game() {
     return (
         <div>
             <div>
-                <h2>You generated {gameState.currentScore} lines of code</h2>
-            </div>
-            <div>
-
+                <h2>You generated {Math.round(gameState.currentScore)} lines of code</h2>
             </div>
             <h3>Your items: </h3>
             <ul>
