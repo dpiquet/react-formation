@@ -1,34 +1,19 @@
 import {createRoot} from 'react-dom/client'
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 import items from "./items.json";
-import {Provider} from "react-redux";
-import store from "./store.ts";
+import {Provider, useDispatch, useSelector} from "react-redux";
+import store, {RootState} from "./store.ts";
+import {buyItem, incrementScore, Item} from "./modules/game";
 
 let rootElement = document.getElementById("root")
-if (!rootElement) {
-    throw new Error('Root not found');
-}
+if (!rootElement) throw new Error('Root not found');
 
 const root = createRoot(rootElement)
 
-type Item = {
-    name: string
-    price: number,
-    linesPerMilliseconds: number,
-}
-
-type GameState = {
-    currentScore: number,
-    ownedItems: Item[],
-}
-
 function Game() {
-    // FIXME: Question: 1 game state with everything in it ? or 2 states (score and ownedItems )?
-    const [gameState, setGameState] = useState({
-        ownedItems: [] as Item[],
-        currentScore: 20,
-    });
+    const gameState = useSelector((globalState: RootState) => globalState.game);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -38,34 +23,18 @@ function Game() {
                 scoreUpdate += item.linesPerMilliseconds;
             });
 
-            incrementScore(scoreUpdate)
+            dispatchIncrementScore(scoreUpdate)
         }, 100);
 
         return () => clearInterval(interval);
     }, [gameState]);
 
-    const buyItem = (item: Item) => {
-        if (item.price > gameState.currentScore) return;
-
-        setGameState((gameState: GameState): GameState => {
-            return {
-                ...gameState,
-                currentScore: gameState.currentScore - item.price,
-                ownedItems: [
-                    ...gameState.ownedItems,
-                    item
-                ],
-            }
-        });
+    const dispatchBuyItem = (item: Item) => {
+        dispatch(buyItem(item));
     }
 
-    const incrementScore = (incr = 1) => {
-        setGameState((state) => {
-            return {
-                ...state,
-                currentScore: state.currentScore + incr,
-            }
-        })
+    const dispatchIncrementScore = (incr = 1) => {
+        dispatch(incrementScore(incr));
     }
 
     return (
@@ -82,14 +51,14 @@ function Game() {
             <div>
 
             </div>
-            <button onClick={() => incrementScore()}>Code !</button>
+            <button onClick={() => dispatchIncrementScore()}>Code !</button>
             <div>
                 {items.map((item) => (
                         <div key={item.name}>
                             {item.name} {item.price}
                             <button
                                 disabled={item.price > gameState.currentScore}
-                                onClick={() => buyItem(item)}
+                                onClick={() => dispatchBuyItem(item)}
                             >
                                 {item.name}
                             </button>
