@@ -18,7 +18,7 @@ var __copyProps = (to, from, except, desc) => {
 var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "default"), secondTarget && __copyProps(secondTarget, mod, "default"));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/index.ts
+// src/gameSlice.ts
 var src_exports = {};
 __export(src_exports, {
   ReducerType: () => ReducerType,
@@ -1769,7 +1769,7 @@ function createEntityAdapter(options = {}) {
   };
 }
 
-// src/listenerMiddleware/index.ts
+// src/listenerMiddleware/gameSlice.ts
 var import_redux5 = require("redux");
 
 // src/listenerMiddleware/exceptions.ts
@@ -1880,7 +1880,7 @@ var createDelay = (signal) => {
   };
 };
 
-// src/listenerMiddleware/index.ts
+// src/listenerMiddleware/gameSlice.ts
 var {
   assign
 } = Object;
@@ -2178,7 +2178,7 @@ var createListenerMiddleware = (middlewareOptions = {}) => {
   };
 };
 
-// src/dynamicMiddleware/index.ts
+// src/dynamicMiddleware/gameSlice.ts
 var import_redux6 = require("redux");
 var createMiddlewareEntry = (middleware) => ({
   middleware,

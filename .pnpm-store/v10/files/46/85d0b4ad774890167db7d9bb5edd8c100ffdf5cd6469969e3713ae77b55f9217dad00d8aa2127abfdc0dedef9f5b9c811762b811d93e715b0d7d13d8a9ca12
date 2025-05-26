@@ -17,7 +17,7 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/query/index.ts
+// src/query/gameSlice.ts
 var query_exports = {};
 __export(query_exports, {
   NamedSchemaError: () => NamedSchemaError,
@@ -2650,7 +2650,7 @@ var buildWindowEventHandler = ({
   return handler;
 };
 
-// src/query/core/buildMiddleware/index.ts
+// src/query/core/buildMiddleware/gameSlice.ts
 function buildMiddleware(input) {
   const {
     reducerPath,
@@ -2903,7 +2903,7 @@ var coreModule = ({
   }
 });
 
-// src/query/core/index.ts
+// src/query/core/gameSlice.ts
 var createApi = /* @__PURE__ */ buildCreateApi(coreModule());
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

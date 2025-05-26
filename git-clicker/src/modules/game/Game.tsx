@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import items from "./items.json";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store.ts";
-import {buyItem, incrementScore, Item} from "./index.ts";
+import {buyItem, incrementScore, Item} from "./gameSlice.ts";
 
 
 export default function Game() {

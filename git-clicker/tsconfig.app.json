@@ -25,5 +25,10 @@
     /* Testing */
     "types": ["vitest/globals"]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "node_modules/.pnpm/vitest@3.1.4_@types+node@22.15.21_jsdom@26.1.0/node_modules/vitest/globals.d.ts",
+    "node_modules/.pnpm/vitest@3.1.4_@types+node@22.15.21_jsdom@26.1.0/node_modules/vitest/globals.d.ts",
+    "node_modules/.pnpm/vitest@3.1.4_@types+node@22.15.21_jsdom@26.1.0/node_modules/vitest/globals.d.ts"
+  ]
 }

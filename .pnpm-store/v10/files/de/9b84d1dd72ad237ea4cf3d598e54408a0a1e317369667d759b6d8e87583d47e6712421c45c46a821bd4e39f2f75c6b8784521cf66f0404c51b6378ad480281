@@ -31,7 +31,7 @@ var __objRest = (source, exclude) => {
 };
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 
-// src/index.ts
+// src/gameSlice.ts
 export * from "redux";
 import { produce, current as current3, freeze, original as original2, isDraft as isDraft5 } from "immer";
 import { createSelector, createSelectorCreator as createSelectorCreator2, lruMemoize, weakMapMemoize as weakMapMemoize2 } from "reselect";
@@ -1715,7 +1715,7 @@ function createEntityAdapter(options = {}) {
   }, stateFactory), selectorsFactory), stateAdapter);
 }
 
-// src/listenerMiddleware/index.ts
+// src/listenerMiddleware/gameSlice.ts
 import { isAction as isAction3 } from "redux";
 
 // src/listenerMiddleware/exceptions.ts
@@ -1826,7 +1826,7 @@ var createDelay = (signal) => {
   };
 };
 
-// src/listenerMiddleware/index.ts
+// src/listenerMiddleware/gameSlice.ts
 var {
   assign
 } = Object;
@@ -2125,7 +2125,7 @@ var createListenerMiddleware = (middlewareOptions = {}) => {
   };
 };
 
-// src/dynamicMiddleware/index.ts
+// src/dynamicMiddleware/gameSlice.ts
 import { compose as compose3 } from "redux";
 var createMiddlewareEntry = (middleware) => ({
   middleware,

@@ -1,4 +1,4 @@
-// src/query/react/index.ts
+// src/query/react/gameSlice.ts
 import { buildCreateApi, coreModule } from "@reduxjs/toolkit/query";
 
 // src/query/react/module.ts
@@ -680,7 +680,7 @@ Hook ${hookName} was either not provided or not a function.`);
   };
 };
 
-// src/query/react/index.ts
+// src/query/react/gameSlice.ts
 export * from "@reduxjs/toolkit/query";
 
 // src/query/react/ApiProvider.tsx
@@ -706,7 +706,7 @@ function ApiProvider(props) {
   return /* @__PURE__ */ React.createElement(Provider, { store, context }, props.children);
 }
 
-// src/query/react/index.ts
+// src/query/react/gameSlice.ts
 var createApi = /* @__PURE__ */ buildCreateApi(coreModule(), reactHooksModule());
 export {
   ApiProvider,

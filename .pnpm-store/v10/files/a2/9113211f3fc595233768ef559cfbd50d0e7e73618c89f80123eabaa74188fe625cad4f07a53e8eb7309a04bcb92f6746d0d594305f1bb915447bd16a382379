@@ -2611,7 +2611,7 @@ var buildWindowEventHandler = ({
   return handler;
 };
 
-// src/query/core/buildMiddleware/index.ts
+// src/query/core/buildMiddleware/gameSlice.ts
 function buildMiddleware(input) {
   const {
     reducerPath,
@@ -2864,7 +2864,7 @@ var coreModule = ({
   }
 });
 
-// src/query/core/index.ts
+// src/query/core/gameSlice.ts
 var createApi = /* @__PURE__ */ buildCreateApi(coreModule());
 export {
   NamedSchemaError,

@@ -1,7 +1,7 @@
-// src/react/index.ts
+// src/react/gameSlice.ts
 export * from "@reduxjs/toolkit";
 
-// src/dynamicMiddleware/react/index.ts
+// src/dynamicMiddleware/react/gameSlice.ts
 import { createDynamicMiddleware as cDM } from "@reduxjs/toolkit";
 import { createDispatchHook, ReactReduxContext, useDispatch as useDefaultDispatch } from "react-redux";
 var createDynamicMiddleware = () => {

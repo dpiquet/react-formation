@@ -1,4 +1,4 @@
-import game, {buyItem, incrementScore, Item} from './index.ts'
+import game, {buyItem, incrementScore, Item} from './gameSlice.ts'
 
 describe('game reducer', () => {
     it('should handle incrementScore', () => {
