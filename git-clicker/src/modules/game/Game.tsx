@@ -38,7 +38,7 @@ export default function Game() {
                 <h2>You generated {Math.round(gameState.currentScore)} lines of code</h2>
             </div>
             <h3>Your items: </h3>
-            <ul>
+            <ul data-testid="boughtItems">
                 {gameState.ownedItems.map((oi: Item, index) => (
                     <li key={index}>{oi.name}</li>
                 ))}
