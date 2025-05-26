@@ -15,7 +15,6 @@ function Game() {
     const gameState = useSelector((globalState: RootState) => globalState.game);
     const dispatch = useDispatch();
 
-    // Fixme: question: Is it safe to mix redux and useEffect ?
     useEffect(() => {
         const interval = setInterval(() => {
             // Compute scoreupdate and update score once accordingly
