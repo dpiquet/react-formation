@@ -1,5 +1,4 @@
-import {getByRole, render, screen, within} from "@testing-library/react";
-import store from "../../../store.ts";
+import {render, screen, within} from "@testing-library/react";
 import Game from "../Game.tsx"
 
 import {Provider} from "react-redux";

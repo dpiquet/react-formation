@@ -1,17 +1,19 @@
 import {useEffect} from "react";
 
 import items from "./items.json";
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../store.ts";
-import {buyItem, incrementScore, Item} from "./gameSlice.ts";
+import {useSelector} from "react-redux";
+import {RootState, useAppDispatch} from "../../store.ts";
+import {buyItem, incrementScore, Item, loadState, saveState} from "./gameSlice.ts";
 
 
 export default function Game() {
     const gameState = useSelector((globalState: RootState) => globalState.game);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         const interval = setInterval(() => {
+            if (gameState.ownedItems.length === 0) return;
+
             // Compute scoreupdate and update score once accordingly
             let scoreUpdate = 0;
             gameState.ownedItems.forEach((item) => {
@@ -24,12 +26,18 @@ export default function Game() {
         return () => clearInterval(interval);
     }, [gameState]);
 
+    useEffect(() => {
+        dispatch(loadState())
+    }, []);
+
     const dispatchBuyItem = (item: Item) => {
         dispatch(buyItem(item));
+        dispatch(saveState())
     }
 
     const dispatchIncrementScore = (incr = 1) => {
         dispatch(incrementScore(incr));
+        dispatch(saveState())
     }
 
     return (

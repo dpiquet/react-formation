@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export type Item = {
     name: string
@@ -16,10 +16,35 @@ const initialState = {
     currentScore: 30,
 } satisfies GameState as GameState
 
+export const loadState = createAsyncThunk<void>(
+    'game/load',
+    async (_, {dispatch}) => {
+        // retrieve data from localStorage
+        const localStoredState = localStorage.getItem('gamestate')
+
+        const loadedState = localStoredState
+            ? JSON.parse(localStoredState)
+            : initialState
+
+        // dispatch the initialize action to mutate state
+        dispatch(gameSlice.actions.initialize(loadedState))
+    },
+)
+
+export const saveState = createAsyncThunk<void>(
+    'game/save',
+    async (_, {getState}) => {
+        localStorage.setItem('gamestate', JSON.stringify(getState().game))
+    },
+)
+
 const gameSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
+        initialize(_, action: PayloadAction<GameState>) {
+            return action.payload;
+        },
         incrementScore(state, action: PayloadAction<number>) {
             state.currentScore += action.payload;
         },
