@@ -17,7 +17,7 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/gameSlice.ts
+// src/index.ts
 var src_exports = {};
 __export(src_exports, {
   createSelector: () => createSelector,

@@ -18,10 +18,10 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
-// src/react/gameSlice.ts
+// src/react/index.ts
 export * from "@reduxjs/toolkit";
 
-// src/dynamicMiddleware/react/gameSlice.ts
+// src/dynamicMiddleware/react/index.ts
 import { createDynamicMiddleware as cDM } from "@reduxjs/toolkit";
 import { createDispatchHook, ReactReduxContext, useDispatch as useDefaultDispatch } from "react-redux";
 var createDynamicMiddleware = () => {

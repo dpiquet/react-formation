@@ -16,7 +16,7 @@ npm install fast-deep-equal
 ## Features
 
 - ES5 compatible
-- works in node.js (8+) and browsers (IE9+)
+- works in node.ts (8+) and browsers (IE9+)
 - checks equality of Date and RegExp objects by value.
 
 ES6 equal (`require('fast-deep-equal/es6')`) also supports:
@@ -70,7 +70,7 @@ assert.deepStrictEqual x 456 ops/sec ±0.71% (88 runs sampled)
 The fastest is fast-deep-equal
 ```
 
-To run benchmark (requires node.js 6+):
+To run benchmark (requires node.ts 6+):
 
 ```bash
 npm run benchmark

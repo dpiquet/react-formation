@@ -21,7 +21,7 @@
     "./lib/no-work-result": "./lib/no-work-result.js",
     "./lib/list": "./lib/list.js",
     "./lib/map-generator": "./lib/map-generator.js",
-    "./lib/node": "./lib/node.js",
+    "./lib/node": "./lib/node.ts",
     "./lib/parse": "./lib/parse.js",
     "./lib/parser": "./lib/parser.js",
     "./lib/postcss": "./lib/postcss.js",

@@ -1,4 +1,4 @@
-// src/gameSlice.ts
+// src/index.ts
 import path, { posix } from "path";
 import { fdir } from "fdir";
 import picomatch2 from "picomatch";
@@ -83,7 +83,7 @@ function log(...tasks) {
   console.log(`[tinyglobby ${(/* @__PURE__ */ new Date()).toLocaleTimeString("es")}]`, ...tasks);
 }
 
-// src/gameSlice.ts
+// src/index.ts
 var PARENT_DIRECTORY = /^(\/?\.\.)+/;
 var ESCAPING_BACKSLASHES = /\\(?=[()[\]{}!*+?@|])/g;
 var BACKSLASHES = /\\/g;

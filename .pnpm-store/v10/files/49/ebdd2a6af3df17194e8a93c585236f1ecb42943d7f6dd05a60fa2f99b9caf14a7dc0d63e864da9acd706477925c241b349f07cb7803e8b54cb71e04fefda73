@@ -17638,7 +17638,7 @@ var debugExports = debug$a.exports;
 	}
 
 	/**
-	 * Copied from `node/src/node.js`.
+	 * Copied from `node/src/node.ts`.
 	 *
 	 * XXX: It's lame that node doesn't expose this API out-of-the-box. It also
 	 * relies on the undocumented `tty_wrap.guessHandleType()` which is also lame.
@@ -18088,7 +18088,7 @@ function attachFinishedListener(msg, callback) {
   msg.on('socket', onSocket);
 
   if (msg.socket === undefined) {
-    // node.js 0.8 patch
+    // node.ts 0.8 patch
     patchAssignSocket(msg, onSocket);
   }
 }
@@ -18140,7 +18140,7 @@ function createListener(msg) {
 }
 
 /**
- * Patch ServerResponse.prototype.assignSocket for node.js 0.8.
+ * Patch ServerResponse.prototype.assignSocket for node.ts 0.8.
  *
  * @param {ServerResponse} res
  * @param {function} callback

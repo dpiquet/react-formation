@@ -1,20 +1,39 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSelector, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {RootState} from "../../store.ts";
 
 export type Item = {
     name: string
     price: number,
-    linesPerMilliseconds: number,
+    linesPerMillisecond: number,
 }
 
 export type GameState = {
     currentScore: number,
     ownedItems: Item[],
+    availableItems: Item[],
 }
 
 const initialState = {
     ownedItems: [] as Item[],
     currentScore: 30,
+    availableItems: [] as Item[],
 } satisfies GameState as GameState
+
+const selectSelf = (state: RootState) => {
+    return state.game
+}
+export const availableItemsSelector = createSelector(selectSelf, (state) => state.availableItems);
+
+export const loadAvailableItems = createAsyncThunk<void>(
+    'game/loadAvailableItems',
+    async (_, {dispatch}) => {
+        const apiUrl = import.meta.env.VITE_API_URL
+        const response = await fetch(`${apiUrl}/api/shop/items`)
+
+        const items = await response.json()
+        dispatch(gameSlice.actions.setAvailableItem(items));
+    },
+)
 
 export const loadState = createAsyncThunk<void>(
     'game/load',
@@ -27,7 +46,7 @@ export const loadState = createAsyncThunk<void>(
             : initialState
 
         // dispatch the initialize action to mutate state
-        dispatch(gameSlice.actions.initialize(loadedState))
+        // dispatch(gameSlice.actions.initialize(loadedState))
     },
 )
 
@@ -48,6 +67,9 @@ const gameSlice = createSlice({
         incrementScore(state, action: PayloadAction<number>) {
             state.currentScore += action.payload;
         },
+        setAvailableItem(state, action: PayloadAction<Item[]>) {
+            state.availableItems = action.payload;
+        },
         buyItem(state, action: PayloadAction<Item>) {
             const item = action.payload;
             if (item.price > state.currentScore) return;
@@ -58,6 +80,6 @@ const gameSlice = createSlice({
     }
 })
 
-export const {incrementScore, buyItem} = gameSlice.actions;
+export const {incrementScore, buyItem, setAvailableItem} = gameSlice.actions;
 export const reducer = gameSlice.reducer;
 export default reducer

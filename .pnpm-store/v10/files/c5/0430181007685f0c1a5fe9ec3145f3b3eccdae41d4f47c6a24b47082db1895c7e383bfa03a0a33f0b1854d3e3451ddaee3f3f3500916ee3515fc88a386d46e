@@ -28,7 +28,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/query/react/gameSlice.ts
+// src/query/react/index.ts
 var react_exports = {};
 __export(react_exports, {
   ApiProvider: () => ApiProvider,
@@ -719,7 +719,7 @@ Hook ${hookName} was either not provided or not a function.`);
   };
 };
 
-// src/query/react/gameSlice.ts
+// src/query/react/index.ts
 __reExport(react_exports, require("@reduxjs/toolkit/query"), module.exports);
 
 // src/query/react/ApiProvider.tsx
@@ -745,7 +745,7 @@ function ApiProvider(props) {
   return /* @__PURE__ */ React.createElement(import_react_redux4.Provider, { store, context }, props.children);
 }
 
-// src/query/react/gameSlice.ts
+// src/query/react/index.ts
 var createApi = /* @__PURE__ */ (0, import_query3.buildCreateApi)((0, import_query3.coreModule)(), reactHooksModule());
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

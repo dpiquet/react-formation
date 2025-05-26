@@ -135,4 +135,4 @@ function traverseNode(node, opts, scope, state, path, skipKeys, visitSelf) {
   return false;
 }
 
-//# sourceMappingURL=traverse-node.js.map
+//# sourceMappingURL=traverse-node.ts.map

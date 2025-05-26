@@ -27,7 +27,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/gameSlice.ts
+// src/index.ts
 var index_exports = {};
 __export(index_exports, {
   convertPathToPattern: () => convertPathToPattern,
@@ -121,7 +121,7 @@ function log(...tasks) {
   console.log(`[tinyglobby ${(/* @__PURE__ */ new Date()).toLocaleTimeString("es")}]`, ...tasks);
 }
 
-// src/gameSlice.ts
+// src/index.ts
 var PARENT_DIRECTORY = /^(\/?\.\.)+/;
 var ESCAPING_BACKSLASHES = /\\(?=[()[\]{}!*+?@|])/g;
 var BACKSLASHES = /\\/g;

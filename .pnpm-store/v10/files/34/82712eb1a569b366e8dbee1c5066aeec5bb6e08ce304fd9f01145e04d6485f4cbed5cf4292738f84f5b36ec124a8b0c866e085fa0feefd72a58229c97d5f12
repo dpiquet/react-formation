@@ -43,7 +43,7 @@ Use it with builtin sort() function.
 <script src=min.natural-compare.js></script>
 ```
 
-- In node.js: `npm install natural-compare-lite`
+- In node.ts: `npm install natural-compare-lite`
 
 ```javascript
 require("natural-compare-lite")

@@ -30,6 +30,7 @@
     "@vitest/eslint-plugin": "^1.2.1",
     "eslint-plugin-testing-library": "^7.2.1",
     "jsdom": "^26.1.0",
+    "msw": "^2.8.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vitest": "^3.1.4"

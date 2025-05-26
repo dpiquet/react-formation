@@ -18,7 +18,7 @@ var __copyProps = (to, from, except, desc) => {
 var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "default"), secondTarget && __copyProps(secondTarget, mod, "default"));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/react/gameSlice.ts
+// src/react/index.ts
 var react_exports = {};
 __export(react_exports, {
   createDynamicMiddleware: () => createDynamicMiddleware
@@ -26,7 +26,7 @@ __export(react_exports, {
 module.exports = __toCommonJS(react_exports);
 __reExport(react_exports, require("@reduxjs/toolkit"), module.exports);
 
-// src/dynamicMiddleware/react/gameSlice.ts
+// src/dynamicMiddleware/react/index.ts
 var import_toolkit = require("@reduxjs/toolkit");
 var import_react_redux = require("react-redux");
 var createDynamicMiddleware = () => {

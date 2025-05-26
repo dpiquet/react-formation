@@ -1,4 +1,4 @@
-// src/gameSlice.ts
+// src/index.ts
 function createThunkMiddleware(extraArgument) {
   const middleware = ({ dispatch, getState }) => (next) => (action) => {
     if (typeof action === "function") {

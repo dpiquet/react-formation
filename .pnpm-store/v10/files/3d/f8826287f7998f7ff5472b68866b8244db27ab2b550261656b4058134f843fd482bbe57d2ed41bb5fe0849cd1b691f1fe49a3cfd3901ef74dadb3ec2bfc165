@@ -15,7 +15,7 @@ completely rewritten from scratch. Now it's very fast, and supports 1.2 spec.
 Installation
 ------------
 
-### YAML module for node.js
+### YAML module for node.ts
 
 ```
 npm install js-yaml

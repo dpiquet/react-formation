@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Full rewrite. Now port from python 3.9.0 & more precise following.
   See [doc](./doc) for difference and migration info.
-- node.js 10+ required
+- node.ts 10+ required
 - Removed most of local docs in favour of original ones.
 
 

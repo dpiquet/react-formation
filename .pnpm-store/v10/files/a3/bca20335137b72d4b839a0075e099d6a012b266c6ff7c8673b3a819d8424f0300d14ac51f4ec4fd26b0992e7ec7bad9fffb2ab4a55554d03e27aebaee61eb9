@@ -413,7 +413,7 @@ class Referencer extends esrecurse.Visitor {
 
         if (this.scopeManager.isGlobalReturn()) {
 
-            // Force strictness of GlobalScope to false when using node.js scope.
+            // Force strictness of GlobalScope to false when using node.ts scope.
             this.currentScope().isStrict = false;
             this.scopeManager.__nestFunctionScope(node, false);
         }

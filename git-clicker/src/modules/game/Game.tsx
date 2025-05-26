@@ -1,13 +1,25 @@
 import {useEffect} from "react";
 
-import items from "./items.json";
+// import items from "./items.json";
+
 import {useSelector} from "react-redux";
 import {RootState, useAppDispatch} from "../../store.ts";
-import {buyItem, incrementScore, Item, loadState, saveState} from "./gameSlice.ts";
+import {
+    availableItemsSelector,
+    buyItem,
+    incrementScore,
+    Item,
+    loadAvailableItems,
+    loadState,
+    saveState
+} from "./gameSlice.ts";
 
 
 export default function Game() {
     const gameState = useSelector((globalState: RootState) => globalState.game);
+    // const availableItems = useSelector((globalState: RootState) => globalState.game.availableItems);
+    const items = useSelector(availableItemsSelector);
+
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -17,7 +29,8 @@ export default function Game() {
             // Compute scoreupdate and update score once accordingly
             let scoreUpdate = 0;
             gameState.ownedItems.forEach((item) => {
-                scoreUpdate += item.linesPerMilliseconds;
+                console.log('owned item', item, item.linesPerMillisecond)
+                scoreUpdate += item.linesPerMillisecond;
             });
 
             dispatchIncrementScore(scoreUpdate)
@@ -28,16 +41,18 @@ export default function Game() {
 
     useEffect(() => {
         dispatch(loadState())
+        dispatch(loadAvailableItems())
     }, []);
 
     const dispatchBuyItem = (item: Item) => {
+        console.log('dispatch buy item', item);
         dispatch(buyItem(item));
-        dispatch(saveState())
+        // dispatch(saveState());
     }
 
     const dispatchIncrementScore = (incr = 1) => {
         dispatch(incrementScore(incr));
-        dispatch(saveState())
+        dispatch(saveState());
     }
 
     return (

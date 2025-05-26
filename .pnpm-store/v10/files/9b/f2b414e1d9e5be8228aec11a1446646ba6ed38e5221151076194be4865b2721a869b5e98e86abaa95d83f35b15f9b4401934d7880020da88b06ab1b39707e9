@@ -52,7 +52,7 @@
     mocha > mkdirp is updated
     istanble >>> optimist > minimist is not updated
 
-  - drop support node.js < 10 in develop - [beba691](https://github.com/royriojas/flat-cache/commit/beba691), [yumetodo](https://github.com/yumetodo), 18/03/2020 01:31:09
+  - drop support node.ts < 10 in develop - [beba691](https://github.com/royriojas/flat-cache/commit/beba691), [yumetodo](https://github.com/yumetodo), 18/03/2020 01:31:09
 
     see mkdirp
 

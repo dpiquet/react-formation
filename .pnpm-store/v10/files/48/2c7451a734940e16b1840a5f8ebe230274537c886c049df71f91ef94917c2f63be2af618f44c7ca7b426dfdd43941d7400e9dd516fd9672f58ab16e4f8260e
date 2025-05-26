@@ -9,7 +9,7 @@ An efficient Javascript implementation of the [Levenshtein algorithm](http://en.
 
 ## Features
 
-* Works in node.js and in the browser.
+* Works in node.ts and in the browser.
 * Better performance than other implementations by not needing to store the whole matrix ([more info](http://www.codeproject.com/Articles/13525/Fast-memory-efficient-Levenshtein-algorithm)).
 * Locale-sensitive string comparisions if needed.
 * Comprehensive test suite and performance benchmark.
@@ -17,7 +17,7 @@ An efficient Javascript implementation of the [Levenshtein algorithm](http://en.
 
 ## Installation
 
-### node.js
+### node.ts
 
 Install using [npm](http://npmjs.org/):
 
@@ -71,7 +71,7 @@ $ npm run build
 
 _Thanks to [Titus Wormer](https://github.com/wooorm) for [encouraging me](https://github.com/hiddentao/fast-levenshtein/issues/1) to do this._
 
-Benchmarked against other node.js levenshtein distance modules (on Macbook Air 2012, Core i7, 8GB RAM):
+Benchmarked against other node.ts levenshtein distance modules (on Macbook Air 2012, Core i7, 8GB RAM):
 
 ```bash
 Running suite Implementation comparison [benchmark/speed.js]...

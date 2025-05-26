@@ -17,7 +17,7 @@ import Node, {
   NodeProps,
   Position,
   Source
-} from './node.js'
+} from './node.ts'
 import Processor from './processor.js'
 import Result, { Message } from './result.js'
 import Root, { RootProps } from './root.js'

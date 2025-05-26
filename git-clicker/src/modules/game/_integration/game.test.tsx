@@ -5,6 +5,9 @@ import {Provider} from "react-redux";
 import userEvent from "@testing-library/user-event";
 import {expect} from "vitest";
 import {createStore} from "../../../store.ts";
+import {server} from "../../../mocks/node.ts";
+
+server.listen()
 
 describe('clicker game', () => {
     it('increments score on button click', async () => {

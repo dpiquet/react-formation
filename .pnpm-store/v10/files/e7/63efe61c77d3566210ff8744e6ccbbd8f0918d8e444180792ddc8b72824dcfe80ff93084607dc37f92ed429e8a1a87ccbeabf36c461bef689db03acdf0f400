@@ -1,7 +1,7 @@
 import AtRule from './at-rule.js'
 import Comment from './comment.js'
 import Declaration from './declaration.js'
-import Node, { ChildNode, ChildProps, NodeProps } from './node.js'
+import Node, { ChildNode, ChildProps, NodeProps } from './node.ts'
 import Rule from './rule.js'
 
 declare namespace Container {

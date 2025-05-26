@@ -128,9 +128,9 @@ console.log(isMatch('a.a')); //=> false
 console.log(isMatch('a.b')); //=> true
 ```
 
-**Example without node.js**
+**Example without node.ts**
 
-For environments without `node.js`, `picomatch/posix` provides you a dependency-free matcher, without automatic OS detection.
+For environments without `node.ts`, `picomatch/posix` provides you a dependency-free matcher, without automatic OS detection.
 
 ```js
 const picomatch = require('picomatch/posix');
